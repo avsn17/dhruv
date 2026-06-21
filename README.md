@@ -10,24 +10,7 @@ Trying is the outcome of dreams and possibilities. - I hoped for and manifested 
 
 Heartfelt.
 
-
-## 📁 Project Structure
-
-```
-├── index.html          # Main HTML file
-├── css/               # Stylesheets
-│   ├── styles.css      # Main styles
-│   ├── animations.css  # Animation definitions
-│   └── responsive.css  # Media queries
-├── js/                # JavaScript files
-│   ├── main.js        # Main application logic
-│   ├── scroll.js      # Scroll event handlers
-│   └── utils.js       # Utility functions
-└── assets/            # Images, fonts, SVGs
-```
-
-
-Made with 💜 by Avi
+Made with 💜 
 ```
 
 ---
