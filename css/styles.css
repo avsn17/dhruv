@@ -25,7 +25,7 @@ body {
   padding: 0;
   background-color: var(--bg-abyss);
   color: var(--moonlight-haze);
-  font-family: 'Playfair Display', 'Georgia', serif;
+  font-family: 'Georgia', serif;
   overflow-x: hidden;
 }
 
