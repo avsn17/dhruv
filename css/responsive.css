@@ -1,5 +1,5 @@
 /* ========================================
-   RESPONSIVE DESIGN
+   RESPONSIVE DESIGN - OPTIMIZED
    ======================================== */
 
 /* ========== TABLETS (768px and up) ========== */
@@ -21,6 +21,8 @@
 
     .greeting-text .name {
         font-size: var(--font-size-2xl);
+        will-change: transform;
+        backface-visibility: hidden;
     }
 
     .moon {
@@ -116,6 +118,7 @@
         height: 60px;
         top: 20px;
         left: 30px;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
     }
 
     .reeds {
@@ -133,6 +136,8 @@
     .greeting-text .name {
         font-size: 28px;
         margin-top: 1rem;
+        will-change: transform;
+        backface-visibility: hidden;
     }
 
     /* Section 2 */
@@ -200,6 +205,11 @@
 
     .wish-item:hover {
         transform: translateX(5px);
+    }
+
+    .wish-item:focus-visible {
+        outline: 2px solid var(--glow-pink);
+        outline-offset: 4px;
     }
 
     /* Section 5 */
@@ -277,6 +287,8 @@
     .greeting-text .name {
         font-size: 24px;
         letter-spacing: 1px;
+        will-change: transform;
+        backface-visibility: hidden;
     }
 
     /* Section 2 */
@@ -325,6 +337,11 @@
         border-left-width: 2px;
     }
 
+    .wish-item:focus-visible {
+        outline: 2px solid var(--glow-pink);
+        outline-offset: 3px;
+    }
+
     /* Section 5 */
     .question-main {
         font-size: 20px;
@@ -362,6 +379,8 @@
 
     .greeting-text .name {
         font-size: var(--font-size-2xl);
+        will-change: transform;
+        backface-visibility: hidden;
     }
 
     .quote-text {
@@ -403,6 +422,10 @@
     .moon {
         box-shadow: 0 0 40px rgba(255, 255, 255, 0.4);
     }
+
+    body {
+        -webkit-font-smoothing: subpixel-antialiased;
+    }
 }
 
 /* ========== TOUCH DEVICES ========== */
@@ -419,6 +442,11 @@
     /* Remove hover effects on touch */
     .gift-box:hover {
         transform: none;
+    }
+
+    a {
+        padding: 0.5rem;
+        border-radius: 4px;
     }
 }
 
@@ -453,7 +481,7 @@
     }
 }
 
-/* ========== ACCESSIBILITY: LARGE TEXT MODE ========== */
+/* ========== ACCESSIBILITY: REDUCED MOTION ========== */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
