@@ -1,43 +1,6 @@
 # Dhruv
 Trying is the outcome of dreams and possibilities. - I hoped for and manifested in you - Us is the realization of dreams coming together &lt;3
 
-
-
-## Structure
-
-```
-planning-structure/
-├── .gitignore
-├── .github/
-│   └── workflows/
-│       └── deploy.yml
-├── README.md
-├── LICENSE
-├── package.json
-├── index.html
-├── css/
-│   ├── styles.css
-│   ├── animations.css
-│   └── responsive.css
-├── js/
-│   ├── main.js
-│   ├── scroll.js
-│   └── utils.js
-├── assets/
-│   ├── images/
-│   ├── fonts/
-│   └── svg/
-├── docs/
-│   ├── SETUP.md
-│   ├── DEPLOYMENT.md
-│   └── CONTRIBUTING.md
-└── tests/
-    └── index.test.js
-```
-
----
-
-
 ---
 
 ## 3. README.md
@@ -91,44 +54,3 @@ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
 ```
 
----
-
-## 5. GitHub Workflow (CI/CD)
-
-### .github/workflows/deploy.yml
-
-```yaml
-name: Deploy to GitHub Pages
-
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Lint code
-        run: npm run lint
-
-      - name: Build
-        run: npm run build
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .
-```
