@@ -1,129 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A heartfelt website celebrating two people finding more than meets the eye...">
-    <meta name="keywords" content="mushroom, batman ">
+    <meta name="description" content="Avi & Dhruv: A year-long love story, a constellation of choices, a careful construction of forever.">
     <meta name="author" content="Avi">
-    <meta name="theme-color" content="#8B5CF6">
+    <meta name="theme-color" content="#0a0a0a">
     
-    <!-- Open Graph Tags (Socials) -->
-    <meta property="og:title" content="Avi & Dhruv: We are cooking...">
-    <meta property="og:description" content="It had been written in distance; hope made them find each other, time made them stay and challenges forthcoming will make their bond grow stronger evermore for the other and themselves.">
+    <meta property="og:title" content="Avi & Dhruv — Our Story">
+    <meta property="og:description" content="It had been written in distance; hope made them find each other.">
     <meta property="og:type" content="website">
     
-    <!-- Title -->
-    <title>Avi & Dhruv: Choosing to create - A story: In the making...</title>
+    <title>avi & dhruv — our story</title>
     
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    
-    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75'>💜</text></svg>">
-    
-    <!-- Preload Fonts (if using custom fonts) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <style>
-        .music-section {
-            margin-top: 2rem;
-            padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-light: #f5f5f5;
+            --text-dark: #1a1a1a;
+            --text-light: #ffffff;
+            --text-muted: #888888;
+            --accent: #4169E1;
+            --accent-light: #6495ED;
+            --border: #e0e0e0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        body.dark-mode {
+            background: var(--bg-dark);
+            color: var(--text-light);
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(245, 245, 245, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+        }
+
+        body.dark-mode header {
+            background: rgba(10, 10, 10, 0.95);
+            border-bottom-color: #333;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: inherit;
+            font-size: 0.9rem;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            opacity: 1;
+            color: var(--accent);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .header-content {
+                gap: 1rem;
+            }
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 80px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
             text-align: center;
         }
- 
-        .music-label {
-            color: #5F7FBA;
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 8vw, 4rem);
             font-weight: 600;
             margin-bottom: 1rem;
-            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            opacity: 0.7;
+            margin-bottom: 0.5rem;
             letter-spacing: 1px;
-        }
- 
-        audio {
-            width: 100%;
-            max-width: 400px;
-            margin: 0 auto;
-            display: block;
-            border-radius: 5px;
-        }
- 
-        .music-note {
-            display: inline-block;
-            animation: float 4s ease-in-out infinite;
-            margin: 0 0.5rem;
-        }
- 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
-        }
-
-        /* Conversation Section */
-        .conversation-container {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 2.5rem;
-            max-width: 800px;
-            max-height: 700px;
-            overflow-y: auto;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-        }
-
-        .conversation-title {
-            text-align: center;
-            font-size: 1.8rem;
-            color: #764ba2;
-            margin-bottom: 2rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-        }
-
-        /* Chapter Styling */
-        .conversation-chapter {
-            margin-bottom: 2.5rem;
-        }
-
-        .chapter-title {
-            font-size: 1.2rem;
-            color: #667eea;
-            font-weight: 600;
-            margin-bottom: 0.8rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid rgba(102, 126, 234, 0.3);
             text-transform: uppercase;
+            font-weight: 400;
+        }
+
+        .hero-meta {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            opacity: 0.5;
             letter-spacing: 0.5px;
         }
 
-        .chapter-narration {
-            font-size: 0.95rem;
-            color: #555;
-            font-style: italic;
-            margin-bottom: 1.2rem;
-            line-height: 1.7;
-            padding: 1rem;
-            background: rgba(102, 126, 234, 0.05);
-            border-left: 3px solid #667eea;
-            border-radius: 5px;
+        /* Section Styles */
+        .section {
+            margin-bottom: 4rem;
+            animation: fadeIn 0.6s ease-out;
         }
 
-        .message {
-            margin-bottom: 1.2rem;
-            animation: slideInMessage 0.5s ease-out forwards;
-            opacity: 0;
-        }
-
-        @keyframes slideInMessage {
+        @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(10px);
+                transform: translateY(20px);
             }
             to {
                 opacity: 1;
@@ -131,524 +190,766 @@
             }
         }
 
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .section-title::before {
+            content: '—';
+            opacity: 0.3;
+            font-size: 1.2rem;
+        }
+
+        /* Quote Section */
+        .quote-block {
+            background: rgba(65, 105, 225, 0.08);
+            padding: 2rem;
+            border-left: 3px solid var(--accent);
+            border-radius: 4px;
+            margin: 2rem 0;
+        }
+
+        body.dark-mode .quote-block {
+            background: rgba(65, 105, 225, 0.12);
+        }
+
+        .quote-block blockquote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-style: italic;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .quote-date {
+            font-size: 0.85rem;
+            opacity: 0.6;
+            letter-spacing: 0.5px;
+        }
+
+        /* Journey Progress */
+        .journey-timeline {
+            margin: 3rem 0;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        body.dark-mode .timeline-item {
+            border-bottom-color: #333;
+        }
+
+        .timeline-date {
+            font-size: 0.9rem;
+            opacity: 0.6;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content p {
+            opacity: 0.7;
+            line-height: 1.7;
+        }
+
+        /* Messages/Conversations */
+        .message-thread {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.02);
+            border-radius: 8px;
+        }
+
+        body.dark-mode .message-thread {
+            background: rgba(65, 105, 225, 0.05);
+        }
+
+        .message {
+            margin-bottom: 1.5rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .message.avi {
+            justify-content: flex-end;
+        }
+
+        .message-sender {
+            font-size: 0.8rem;
+            opacity: 0.6;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.3rem;
+        }
+
+        .message-content {
+            max-width: 70%;
+            padding: 0.8rem 1.2rem;
+            background: rgba(65, 105, 225, 0.15);
+            border-radius: 8px;
+            line-height: 1.6;
+        }
+
+        .message.avi .message-content {
+            background: rgba(65, 105, 225, 0.25);
+        }
+
+        body.dark-mode .message-content {
+            background: rgba(65, 105, 225, 0.12);
+        }
+
+        body.dark-mode .message.avi .message-content {
+            background: rgba(65, 105, 225, 0.2);
+        }
+
+        .message-interpretation {
+            font-size: 0.85rem;
+            opacity: 0.7;
+            font-style: italic;
+            margin-top: 0.8rem;
+            padding-left: 1rem;
+            border-left: 2px solid var(--accent);
+        }
+
+        /* Chapter Divider */
+        .chapter-divider {
+            text-align: center;
+            margin: 3rem 0;
+            opacity: 0.3;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+        }
+
+        /* Wishlist Cards */
+        .wishes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .wish-card {
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: rgba(245, 245, 245, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode .wish-card {
+            border-color: #333;
+            background: rgba(65, 105, 225, 0.05);
+        }
+
+        .wish-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .wish-emoji {
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+
+        .wish-text {
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Filter Tags */
+        .filter-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 2rem 0;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0.7;
+        }
+
+        body.dark-mode .tag {
+            border-color: #444;
+        }
+
+        .tag:hover,
+        .tag.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            opacity: 1;
+        }
+
+        /* The Question Section */
+        .final-ask {
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 4rem 2rem;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            margin-top: 4rem;
+        }
+
+        body.dark-mode .final-ask {
+            border-color: #333;
+        }
+
+        .final-ask h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 6vw, 3.5rem);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+
+        .final-ask p {
+            font-size: 1.1rem;
+            opacity: 0.7;
+            margin-bottom: 2rem;
+        }
+
+        /* Music Player */
+        .music-player {
+            background: rgba(65, 105, 225, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        body.dark-mode .music-player {
+            background: rgba(65, 105, 225, 0.15);
+        }
+
+        .music-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.6;
+            margin-bottom: 0.8rem;
+        }
+
+        .track-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .track-artist {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-bottom: 1rem;
+        }
+
+        .spotify-btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .spotify-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 2rem;
+            text-align: center;
+            opacity: 0.6;
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border);
+            margin-top: 4rem;
+        }
+
+        body.dark-mode footer {
+            border-top-color: #333;
+        }
+
+        .footer-links {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            display: inline-block;
+            margin: 0 1rem;
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 2rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+
+            .wishes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .message-content {
+                max-width: 85%;
+            }
+
+            .final-ask {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message,
+        .wish-card,
+        .timeline-item {
+            animation: fadeInUp 0.5s ease-out forwards;
+            opacity: 0;
+        }
+
         .message:nth-child(1) { animation-delay: 0.1s; }
         .message:nth-child(2) { animation-delay: 0.2s; }
         .message:nth-child(3) { animation-delay: 0.3s; }
         .message:nth-child(4) { animation-delay: 0.4s; }
-        .message:nth-child(n+5) { animation-delay: 0.5s; }
 
-        .message.dhruv {
-            text-align: left;
-            padding-left: 0;
-        }
-
-        .message.avi {
-            text-align: right;
-            padding-right: 0;
-        }
-
-        .message-content {
-            display: inline-block;
-            padding: 0.8rem 1.2rem;
-            border-radius: 12px;
-            max-width: 85%;
-            word-wrap: break-word;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-
-        .message.dhruv .message-content {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border-bottom-left-radius: 3px;
-        }
-
-        .message.avi .message-content {
-            background: #f0f0f0;
-            color: #333;
-            border-bottom-right-radius: 3px;
-        }
-
-        .message-time {
-            font-size: 0.7rem;
-            color: #999;
-            margin-top: 0.3rem;
-        }
-
-        .message.dhruv .message-time {
-            text-align: left;
-        }
-
-        .message.avi .message-time {
-            text-align: right;
-        }
-
-        .message-sender {
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: #666;
-            margin-bottom: 0.3rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .message.dhruv .message-sender {
-            color: #764ba2;
-            text-align: left;
-        }
-
-        .message.avi .message-sender {
-            color: #667eea;
-            text-align: right;
-        }
-
-        /* Interpretation Box */
-        .message-interpretation {
-            font-size: 0.85rem;
-            color: #666;
-            margin-top: 0.8rem;
-            padding: 0.8rem 1rem;
-            background: rgba(255, 255, 255, 0.6);
-            border-left: 3px solid #764ba2;
-            border-radius: 4px;
-            font-style: italic;
-            line-height: 1.6;
-        }
-
-        /* Scrollbar styling */
-        .conversation-container::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        .conversation-container::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.05);
-            border-radius: 10px;
-        }
-
-        .conversation-container::-webkit-scrollbar-thumb {
-            background: rgba(139, 92, 246, 0.3);
-            border-radius: 10px;
-        }
-
-        .conversation-container::-webkit-scrollbar-thumb:hover {
-            background: rgba(139, 92, 246, 0.5);
-        }
-
-        .divider {
-            text-align: center;
-            color: #ccc;
-            margin: 2rem 0;
-            font-size: 1.5rem;
-        }
+        .wish-card:nth-child(1) { animation-delay: 0.1s; }
+        .wish-card:nth-child(2) { animation-delay: 0.2s; }
+        .wish-card:nth-child(3) { animation-delay: 0.3s; }
     </style>
 </head>
 <body>
-    <!-- Canva Background Container -->
-    <div class="canva-background">
-        <iframe 
-            loading="lazy"
-            src="https://www.canva.com/design/DAHMj03WL-s/lPBZbedK9oGj6wRYo65VFg/view?embed"
-            allowfullscreen>
-        </iframe>
-    </div>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">avi & dhruv</div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#about">about</a></li>
+                    <li><a href="#journey">journey</a></li>
+                    <li><a href="#moments">moments</a></li>
+                    <li><a href="#question">question</a></li>
+                </ul>
+            </nav>
+            <button class="theme-toggle" id="themeToggle">🌙</button>
+        </div>
+    </header>
 
-    <!-- Main Container -->
-    <main class="container" id="main-container" role="main">
-        
-        <!-- SECTION 1: SUNRISE-->
-        <section class="section section-1" id="section-1" aria-label="Birthday greeting">
-            <div class="greeting-text">
-                <p>Most definitely happiest of birthdays</p>
-                <span class="name">Dhruv</span>
-            </div>
-            
-            <p style="text-align:center; margin-top: 40px; position: relative; z-index: 2;">
-                <a href="https://www.canva.com/design/DAHMj03WL-s/lPBZbedK9oGj6wRYo65VFg/view"
-                   target="_blank" rel="noopener">
-                    <span style="color: royalblue;"> Please -Unwrap your gift ✨</span>
-                </a>
-            </p>
-        </section>
-
-        <!-- SECTION 2: QUOTE -->
-        <section class="section section-2" id="section-2" aria-label="Quote section">
-            <div class="quote-container">
-                <blockquote class="quote-text">
-                    "Dhruv, if time truly does serve a purpose; then waiting for you taught me patience, and showed me that eventually, with hope, it will become evermore purposeful."
-                </blockquote>
-                <p class="quote-date">14th of June 2026</p>
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <p>happy birthday</p>
+                <h1>dhruv</h1>
+                <p>a love story, carefully constructed</p>
+                <div class="hero-meta">may 14 — may 25 — june 14 — ∞</div>
             </div>
         </section>
 
-        <!-- SECTION 3: Looking forward to: -->
-        <section class="section section-4" id="section-4" aria-label="Wishes">
-            <div class="wish-content">
-                <h2 class="wish-title">I wish for...</h2>
+        <!-- Container Wrapper -->
+        <div class="container">
+
+            <!-- About Section -->
+            <section class="section" id="about">
+                <h2 class="section-title">the beginning</h2>
                 
-                <article class="wish-item" data-wish="1">
-                    <span class="wish-emoji">✨</span> Your hand in mine - and making sure not to let go of it.
-                </article>
-                
-                <article class="wish-item" data-wish="2">
-                    <span class="wish-emoji">✨</span> Mornings with your presence. Hugs at times. Supporting and motivating one another.
-                </article>
-                
-                <article class="wish-item" data-wish="3">
-                    <span class="wish-emoji">✨</span> Memories collected -together - of a lifetime; a chance we took: Honestly, we could have hit the lottery but chose instead one and eachother..." Madness
-                </article>
-                
-                <article class="wish-item" data-wish="4">
-                    <span class="wish-emoji">✨</span>  We'll be too busy making new memories - I will make this part elliptic for it is... open to suggestions :)
-                </article>
-                
-                <article class="wish-item" data-wish="5">
-                    <span class="wish-emoji">✨</span> You. As my everlasting partner in crime... I wanna ask you now...
-                </article>
-            </div>
-        </section>
-
-        <!-- SECTION: OUR CONVERSATIONS -->
-        <section class="section section-3" id="section-3" aria-label="Conversations">
-            <div class="conversation-container">
-                <h2 class="conversation-title"> 💚 </h2>
-
-                <!-- Prelog -->
-                <div class="conversation-chapter">
-                    <div class="chapter-title">Introduction to Prelog</div>
-                    <div class="chapter-narration">
-                        It began with something he said through everything that followed: "Stay Fearless". Was what remained. I didn't know what awaited us, but somewhere I heard and I knew, without fully understanding why, that I needed to introduce myself to him: A leap in faith - an introduction for with him there would be hope.. (DM I sent out, he who was just existing and brought in his being something familiar) In a sense something that made me say more than needed to be said... I searched for a reason to introduce myself so.. your hand in mine - and making sure not to let go of it. . (i could swear ur face is so familiar idk why)- 6/05/2026
-                    </div>
-
-                    <div class="message dhruv">
-                        <div class="message-sender">Dhruv</div>
-                        <div class="message-content">Stay Fearless</div>
-                        <div class="message-time">5/14/26, 9:05 PM</div>
-                    </div>
-
-                    <div class="message avi">
-                        <div class="message-sender">Avi</div>
-                        <div class="message-content">Someday i will remind u of this message and ask for voice recording</div>
-                        <div class="message-time">5/16/26, 10:14 PM</div>
-                    </div>
-                    <div class="message-interpretation">
-                        Even then, I was thinking in permanence-of echoes that would outlive the moment. His voice had already begun to matter to me without realizing it, I was leaning into something deeper than a fleeting exchange; But me being Avi saw the storm and dived head first without questioning anyone. Fire rests in storms like warm hugs find themselves in reflecting light to the sea.
-                    </div>
-
-                    <div class="message dhruv">
-                        <div class="message-sender">Dhruv</div>
-                        <div class="message-content">Which I told I'll sing. I suck at remembering their names (It is Rabitaa) please proceed to sing (: </div>
-                        <div class="message-time">5/16/26, 10:21 PM</div>
-                    </div>
-                    <div class="message-interpretation">
-                        In his response, there was only honesty. Unguardely - real. His authenticy made me open up to him, trust him and trust and love myself more. - It was my first principle the person I chose to love would be one of words. And he was. :)
+                <div class="quote-block">
+                    <blockquote>
+                        "Dhruv, if time truly does serve a purpose; then waiting for you taught me patience, and showed me that eventually, with hope, it will become evermore purposeful."
+                    </blockquote>
+                    <p class="quote-date">14th of June, 2026</p>
                 </div>
 
-                <div class="divider">✨</div>
-
-                <!-- CHAPTER 2: GRADUALLY OPENING UP -->
-                <div class="conversation-chapter">
-                    <div class="chapter-title">If commitment is time our words were foreplay to what was yet to come</div>
-                    <div class="chapter-narration">
-                        Then I needed him to understand something essential: Distance made us who we were; gaps in between words paragraphs to texts, and whatever seemed challenging to others was essentially and essentiall to us.
-                    </div>
-
-                    <div class="message dhruv">
-                        <div class="message-sender">dhruv</div>
-                        <div class="message-content">If I can listen along with the happiest songs, then I can stay along with the sad ones as well</div>
-                        <div class="message-time">5/17/26, 8:25 PM</div>
-                    </div>
-                    <div class="message-interpretation">
-                        His words were simple, but they carried weight— evidently.
-                    </div>
-
-                    <div class="message dhruv">
-                        <div class="message-sender">Dhruv</div>
-                        <div class="message-content">We shall play a match of chess or something some day</div>
-                        <div class="message-time">5/17/26, 8:55 PM</div>
-                    </div>
-                    <div class="message-interpretation">
-                        And in return, he spoke of a future—subtle. A moment imagined. Became a goal towards- a quiet promise of time, patience, and thought.
-                    </div>
-                </div>
-
-                <div class="divider">✨</div>
-
-                <!-- CHAPTER 3: Growth -->
-                <div class="conversation-chapter">
-                    <div class="chapter-title"> Chapter 3: Growing towards Each Other</div>
-                    <div class="chapter-narration">
-                        There's a moment when you stop protecting yourself. When you offer up the parts of you that you've spent years cultivating cautiously I reached that moment with him and offered him my trust coinceeded with him offering me his.
-                    </div>
-
-                    <div class="message avi">
-                        <div class="message-sender">Avi</div>
-                        <div class="message-content">The best one can do is try. The worst one can do is be content.</div>
-                        <div class="message-time">5/17/26, 9:17 PM</div>
-                    </div>
-
-                    <div class="message avi">
-                        <div class="message-sender">Avi</div>
-                        <div class="message-content">Potential is a ladder. There is always a way up. Potential is only a ceiling we imagine for ourselves.</div>
-                        <div class="message-time">5/17/26, 9:17 PM</div>
-                    </div>
-                    <div class="message-interpretation">
-                        These were not just words; they were fragments of Me. I didn't know if he would understand, only that I needed him to see me as I am. As cookie crumbs in fairytales - in hope. Always with hope. 
-                    </div>
-
-                    <div class="message dhruv">
-                        <div class="message-sender">Dhruv</div>
-                        <div class="message-content">There's an extension as well—after "one can do is try". If they succeed they can lead. If they don't, then they can guide.</div>
-                        <div class="message-time">5/17/26, 9:18 PM</div>
-                    </div>
-                    <div class="message-interpretation">
-                        But he didn't just understand—he expanded. He met my thoughts with his own, refining them. In that moment, Eventually I realized this it was mutual evolution.
-                    </div>
-
-                    <div class="message dhruv">
-                        <div class="message-sender">Dhruv</div>
-                        <div class="message-content">I was that one guy who was always there for others and took their problems like my own and solved them. Sometimes got used. Sometimes I left my work to do theirs which costed me. It becomes draining sometimes.</div>
-                        <div class="message-time">5/17/26, 9:22 PM</div>
-                    </div>
-                    <div class="message-interpretation">
-                        When he shared his exhaustion, it revealed something deeper—the cost of being someone who gives too much of themselves. He let me see that... and a lot more. 
-                    </div>
-
-                    <div class="message avi">
-                        <div class="message-sender">Avi</div>
-                        <div class="message-content">I wanted to talk to you before but I didn't know how. You seemed like an awesome person. I was waiting for an opportunity. Thankfully I found one.</div>
-                        <div class="message-time">5/17/26, 10:07 PM</div>
-                    </div>
-                    <div class="message-interpretation">
-                        And I admitted the truth: that I had noticed him long before I spoke. That something in him had quietly drawn me in. That connection clicking.
-                    </div>
-                </div>
-
-                <div class="divider">✨</div>
-
-                <!-- CHAPTER 4: Being seen, being heard -being copleted -->
-                <div class="conversation-chapter">
-                    <div class="chapter-title"> Chapter 4: 2 for 1 </div>
-                    <div class="chapter-narration">
-                        Intimacy doesn't arrive in grand declarations. It arrives when someone notices: When they see you and don't turn away.
-                    </div>
-
-                    <div class="message dhruv">
-                        <div class="message-sender">Dhruv</div>
-                        <div class="message-content">He fights outer demons, I fight inner ones</div>
-                        <div class="message-time">5/22/26, 11:02 PM</div>
-                    </div>
-
-                    <div class="message avi">
-                        <div class="message-sender">Avi</div>
-                        <div class="message-content">Shadows that big need a person bigger. Your personality reflects onto that. Biggest footsteps made—no one can follow. Your path but you.</div>
-                        <div class="message-time">5/22/26, 11:03 PM</div>
-                    </div>
-                    <div class="message-interpretation">
-                        He spoke of his inner battles, and I saw not weakness, but magnitude. Aural. The depth of his struggles defined the scale of what he could overcome to grow. Strenght presents in the weirdest ways :)
-                    </div>
-
-                    <div class="message dhruv">
-                        <div class="message-sender">Dhruv</div>
-                        <div class="message-content">Man, you too good</div>
-                        <div class="message-time">5/22/26, 11:04 PM</div>
-                    </div>
-
-                    <div class="message avi">
-                        <div class="message-sender">Avi</div>
-                        <div class="message-content">Legends are made to be acknowledged. Finally someone recognizes it.</div>
-                        <div class="message-time">5/22/26, 11:04 PM</div>
-                    </div>
-
-                    <div class="message dhruv">
-                        <div class="message-sender">Dhruv</div>
-                        <div class="message-content">I had it recognized long back</div>
-                        <div class="message-time">5/22/26, 11:04 PM</div>
-                    </div>
-                    <div class="message-interpretation">
-                        Perhaps he had always known when it comes from someone who truly sees you it becomes affirmation, not assumption.
-                    </div>
-                </div>
-
-                <div class="divider">✨</div>
-
-                <!-- CHAPTER 5: DEEPDIVE -->
-                <div class="conversation-chapter">
-                    <div class="chapter-title"> Chapter 5: Breathing in to dive deep</div>
-                    <div class="chapter-narration">
-                        There's a moment when you realize there's no going back. When the safety of the surface no longer appeals to you. When you're willing to dive into the unknown because staying shallow is no longer an option.
-                    </div>
-
-                    <div class="message dhruv">
-                        <div class="message-sender">Dhruv</div>
-                        <div class="message-content">We too deep now. The option to get out is long gone.</div>
-                        <div class="message-time">5/23/26, 10:40 PM</div>
-                    </div>
-
-                    <div class="message avi">
-                        <div class="message-sender">Avi</div>
-                        <div class="message-content">There is always a surface even in the deepest dives. In the ocean's water, there's always some percentage of oxygen.</div>
-                        <div class="message-time">5/23/26, 10:40 PM</div>
-                    </div>
-
-                    <div class="message avi">
-                        <div class="message-sender">Avi</div>
-                        <div class="message-content">How long can you hold your breath is more important to ask than how much oxygen is there.</div>
-                        <div class="message-time">5/23/26, 10:41 PM</div>
-                    </div>
-
-                    <div class="message dhruv">
-                        <div class="message-sender">Dhruv</div>
-                        <div class="message-content">For a really deep convo, I could hold it for as long as needed</div>
-                        <div class="message-time">5/23/26, 10:42 PM</div>
-                    </div>
-                    <div class="message-interpretation">
-                        What we were really saying was this: I will not retreat when things become intense. I will remain, even in the depths where things are uncertain and overwhelming. For you, I will endure that stillness.
-                    </div>
-                </div>
-
-                <div class="divider">✨</div>
-
-                <!-- CHAPTER 6: ? -->
-                <div class="conversation-chapter">
-                    <div class="chapter-title"> Who Do You See?</div>
-                    <div class="chapter-narration">
-                        The questions that matter most are never the ones we ask out loud. They're the ones we answer through observation, through attention, through the choice to truly look at another person. Empathy my second criteria you met.
-                    </div>
-
-                    <div class="message dhruv">
-                        <div class="message-sender">Dhruv</div>
-                        <div class="message-content">What do you think I am?</div>
-                        <div class="message-time">5/23/26, 10:43 PM</div>
-                    </div>
-
-                    <div class="message avi">
-                        <div class="message-sender">Avi</div>
-                        <div class="message-content">Who do I think you are? I rather collect information before coming to a conclusion. Who am I in your eyes?</div>
-                        <div class="message-time">5/23/26, 10:43 PM</div>
-                    </div>
-
-                    <div class="message dhruv">
-                        <div class="message-sender">Dhruv</div>
-                        <div class="message-content">You are an empath with really high energy who's always trying to become the best version of yourself. Also really cool, chill, amazing vibes + other good things</div>
-                        <div class="message-time">5/23/26, 10:45 PM</div>
-                    </div>
-
-                    <div class="message avi">
-                        <div class="message-sender">Avi</div>
-                        <div class="message-content">Fun person with awesome smile. And really great posture. :)</div>
-                        <div class="message-time">5/23/26, 10:44 PM</div>
-                    </div>
-                    <div class="message-interpretation">
-                        These were not rehearsed compliments—they were observations. The kind that only come from paying attention. From noticing the details that most people overlook. And in those details, there is sincerity.
-                    </div>
-                </div>
-
-                <div class="divider">✨</div>
-
-                <!-- CHAPTER 7: STARS BURN -->
-                <div class="conversation-chapter">
-                    <div class="chapter-title"> Chapter 7: Burning Bright</div>
-                    <div class="chapter-narration">
-                        And then I understood what we were. Not a gentle love story. Something where two people recognize in each other a similar heat, making them move closer.
-                    </div>
-
-                    <div class="message avi">
-                        <div class="message-sender">Avi</div>
-                        <div class="message-content">"Stars burn from within. Even the sun has been burning for centuries. Life is not painless—but if it were, people like us would be nonexistent."</div>
-                        <div class="message-time">5/25/26, 1:01 AM</div>
-                    </div>
-                    <div class="message-interpretation">
-                        I wanted him to understand that intensity is not something to fear—it is something to accept. That a connection like ours is not meant to be effortless, but meaningful. And meaning often carries weight. Staying meant everything. No matter what in the stillness we had eachother- even if life was loud we knew. The other.
-                    </div>
-
-                    <div class="message avi">
-                        <div class="message-sender">Avi</div>
-                        <div class="message-content">Thank you fr. I fr only see you light up when you smile.</div>
-                        <div class="message-time">5/25/26, 4:49 PM</div>
-                    </div>
-
-                    <div class="message dhruv">
-                        <div class="message-sender">Dhruv</div>
-                        <div class="message-content">Says the one who's always lit up</div>
-                        <div class="message-time">5/25/26, 4:50 PM</div>
-                    </div>
-
-                    <div class="message avi">
-                        <div class="message-sender">Avi</div>
-                        <div class="message-content">Trying my best to keep you smiling sir</div>
-                        <div class="message-time">5/25/26, 4:50 PM</div>
-                    </div>
-
-                    <div class="message dhruv">
-                        <div class="message-sender">Dhruv</div>
-                        <div class="message-content">It is lowkey working mam</div>
-                        <div class="message-time">5/25/26, 4:51 PM</div>
-                    </div>
-                    <div class="message-interpretation">
-                        And yet, beneath all the depth and intensity, there we were—simple. Just two people reflecting light back to each other. In the end, that is what mattered most.
-                    </div>
-                </div>
-
-                <div class="divider">✨</div>
-
-                <!-- CLOSING -->
-                <div class="conversation-chapter">
-                    <div class="chapter-narration" style="text-align: center; font-size: 1rem; font-style: normal; background: rgba(139, 92, 246, 0.1); border-left: none; border-radius: 8px; padding: 1.5rem;">
-                        From strangers to something far more intentional—this was never coincidence. It was a series of choices, made consciously, every single day. <br><br>
-                        And now, I stand at a threshold, not asking for certainty—only for willingness. <br><br>
-                        To continue. To build. To choose this, together.
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- SECTION 4: THE FINAL ASK -->
-        <section class="section section-5" id="section-5" aria-label="Final proposal">
-            <div class="final-question">
-                <h1 class="question-main">
-                    Do you want to go on vacation with me?
-                </h1>
-                <p class="year">2027?</p>
-                <p class="question-sub">
-                    <span>Look at my cam please</span>
+                <p style="opacity: 0.8; margin: 2rem 0; line-height: 1.8;">
+                    It began with three words: <em>"Stay Fearless"</em>. I didn't know what awaited us, but somewhere in the space between fear and faith, I knew I had to introduce myself to him. 
                 </p>
 
-                <!-- Music Section -->
-                <div class="music-section">
-                    <div class="music-label">
-                        <span class="music-note">✨</span>
-                        <span class="music-note">❣️</span>
-                    </div>
-                    <audio controls>
-                        <source src="https://clear-gold-47vb3a9b.edgeone.dev/song.mp3" type="audio/mpeg">
-                    </audio>
-                    <p style="font-size: 0.8rem; color: #ccc; margin-top: 0.8rem;">
-                        💜
-                    </p>
-                </div>
-            </div>
-        </section>
+                <p style="opacity: 0.8; line-height: 1.8;">
+                    What I didn't expect was how easily I'd fall. How his honesty would make me honest. How distance would become our superpower instead of our weakness. How a person could be both grounding and transcendent at the same time.
+                </p>
+            </section>
 
-        <!-- Scroll Hint -->
-        <div class="scroll-hint" aria-label="Scroll down to continue" id="scroll-hint">
-            Scroll to unpack ↓
+            <!-- Journey Section -->
+            <section class="section" id="journey">
+                <h2 class="section-title">our journey</h2>
+
+                <div class="journey-timeline">
+                    <!-- Chapter 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-date">chapter 1</div>
+                        <div class="timeline-content">
+                            <h3>the leap</h3>
+                            <p>Three words that changed everything. He said "Stay Fearless" and I took it as an invitation.</p>
+                        </div>
+                    </div>
+
+                    <!-- Chapter 2 -->
+                    <div class="timeline-item">
+                        <div class="timeline-date">chapter 2</div>
+                        <div class="timeline-content">
+                            <h3>if commitment is time</h3>
+                            <p>Our words were foreplay to what was yet to come. Distance didn't weaken us—it taught us the language of presence.</p>
+                        </div>
+                    </div>
+
+                    <!-- Chapter 3 -->
+                    <div class="timeline-item">
+                        <div class="timeline-date">chapter 3</div>
+                        <div class="timeline-content">
+                            <h3>growing towards each other</h3>
+                            <p>The best one can do is try. He didn't just understand that—he expanded it. Met my thoughts with his own. That's when I knew: mutual evolution.</p>
+                        </div>
+                    </div>
+
+                    <!-- Chapter 4 -->
+                    <div class="timeline-item">
+                        <div class="timeline-date">chapter 4</div>
+                        <div class="timeline-content">
+                            <h3>being seen</h3>
+                            <p>Intimacy arrives when someone notices you clearly and doesn't turn away. When they see the details others miss.</p>
+                        </div>
+                    </div>
+
+                    <!-- Chapter 5 -->
+                    <div class="timeline-item">
+                        <div class="timeline-date">chapter 5</div>
+                        <div class="timeline-content">
+                            <h3>the dive</h3>
+                            <p>There's a moment when you realize there's no going back. When staying shallow becomes impossible. We dove.</p>
+                        </div>
+                    </div>
+
+                    <!-- Chapter 6 -->
+                    <div class="timeline-item">
+                        <div class="timeline-date">chapter 6</div>
+                        <div class="timeline-content">
+                            <h3>burning bright</h3>
+                            <p>This isn't a gentle love story. It's one where two people recognize each other's fire and move closer instead of away.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter-tags">
+                    <span class="tag active">distance</span>
+                    <span class="tag">patience</span>
+                    <span class="tag">honesty</span>
+                    <span class="tag">intensity</span>
+                    <span class="tag">choice</span>
+                </div>
+            </section>
+
+            <!-- Moments Section -->
+            <section class="section" id="moments">
+                <h2 class="section-title">moments in conversation</h2>
+
+                <!-- Message Thread 1 -->
+                <div class="message-thread">
+                    <p style="opacity: 0.6; margin-bottom: 1.5rem; font-size: 0.9rem;">PRELOG: THE FIRST MESSAGE</p>
+                    
+                    <div class="message">
+                        <div>
+                            <div class="message-sender">Dhruv</div>
+                            <div class="message-content">Stay Fearless</div>
+                        </div>
+                    </div>
+
+                    <div class="message avi">
+                        <div>
+                            <div class="message-sender">Avi</div>
+                            <div class="message-content">Someday I'll remind you of this message and ask for a voice recording</div>
+                        </div>
+                    </div>
+
+                    <div class="message-interpretation">
+                        Even then, I was thinking in permanence. Of moments that would echo beyond their time. His voice had already begun to matter.
+                    </div>
+                </div>
+
+                <div class="chapter-divider">•••</div>
+
+                <!-- Message Thread 2 -->
+                <div class="message-thread">
+                    <p style="opacity: 0.6; margin-bottom: 1.5rem; font-size: 0.9rem;">CHAPTER 2: GRADUALLY OPENING UP</p>
+                    
+                    <div class="message">
+                        <div>
+                            <div class="message-sender">Dhruv</div>
+                            <div class="message-content">If I can listen to the happiest songs with you, then I can stay through the saddest ones too</div>
+                        </div>
+                    </div>
+
+                    <div class="message-interpretation">
+                        Simple words, but they carried the weight of a promise.
+                    </div>
+
+                    <div class="message avi">
+                        <div>
+                            <div class="message-sender">Avi</div>
+                            <div class="message-content">The best one can do is try. The worst is being content with less.</div>
+                        </div>
+                    </div>
+
+                    <div class="message">
+                        <div>
+                            <div class="message-sender">Dhruv</div>
+                            <div class="message-content">If they succeed they lead. If they fail, they guide. There's always a path forward.</div>
+                        </div>
+                    </div>
+
+                    <div class="message-interpretation">
+                        He didn't just understand—he expanded on it. That's when I knew: this was mutual evolution.
+                    </div>
+                </div>
+
+                <div class="chapter-divider">•••</div>
+
+                <!-- Message Thread 3 -->
+                <div class="message-thread">
+                    <p style="opacity: 0.6; margin-bottom: 1.5rem; font-size: 0.9rem;">CHAPTER 5: THE DIVE</p>
+                    
+                    <div class="message">
+                        <div>
+                            <div class="message-sender">Dhruv</div>
+                            <div class="message-content">We're too deep now. The exit is gone.</div>
+                        </div>
+                    </div>
+
+                    <div class="message avi">
+                        <div>
+                            <div class="message-sender">Avi</div>
+                            <div class="message-content">Even in the deepest dives, there's always a surface. Always oxygen. The question is: how long can you hold your breath?</div>
+                        </div>
+                    </div>
+
+                    <div class="message">
+                        <div>
+                            <div class="message-sender">Dhruv</div>
+                            <div class="message-content">For conversations like these, I could hold my breath forever.</div>
+                        </div>
+                    </div>
+
+                    <div class="message-interpretation">
+                        What we were really saying: I will not retreat. I will stay. For you, I will endure the uncertainty.
+                    </div>
+                </div>
+
+                <div class="chapter-divider">•••</div>
+
+                <!-- Message Thread 4 -->
+                <div class="message-thread">
+                    <p style="opacity: 0.6; margin-bottom: 1.5rem; font-size: 0.9rem;">CHAPTER 7: BURNING BRIGHT</p>
+                    
+                    <div class="message avi">
+                        <div>
+                            <div class="message-sender">Avi</div>
+                            <div class="message-content">"Stars burn from within. Even the sun has been burning for centuries. Life is not painless—but if it were, people like us would be nonexistent."</div>
+                        </div>
+                    </div>
+
+                    <div class="message-interpretation">
+                        Intensity is not something to fear. It's something to accept. That's what makes this real.
+                    </div>
+
+                    <div class="message">
+                        <div>
+                            <div class="message-sender">Dhruv</div>
+                            <div class="message-content">Says the one who's always lit up</div>
+                        </div>
+                    </div>
+
+                    <div class="message avi">
+                        <div>
+                            <div class="message-sender">Avi</div>
+                            <div class="message-content">I'm just trying my best to keep you smiling, sir.</div>
+                        </div>
+                    </div>
+
+                    <div class="message">
+                        <div>
+                            <div class="message-sender">Dhruv</div>
+                            <div class="message-content">It's working, ma'am.</div>
+                        </div>
+                    </div>
+
+                    <div class="message-interpretation">
+                        And beneath all the depth, there we were—simple. Just two people reflecting light back to each other.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Wishes Section -->
+            <section class="section">
+                <h2 class="section-title">i wish for</h2>
+                
+                <div class="wishes-grid">
+                    <div class="wish-card">
+                        <span class="wish-emoji">✨</span>
+                        <p class="wish-text">Your hand in mine—and making sure never to let go of it.</p>
+                    </div>
+
+                    <div class="wish-card">
+                        <span class="wish-emoji">🌅</span>
+                        <p class="wish-text">Mornings with your presence. Hugs at times. Supporting and motivating each other.</p>
+                    </div>
+
+                    <div class="wish-card">
+                        <span class="wish-emoji">💎</span>
+                        <p class="wish-text">Memories collected together—a lifetime of moments we chose over certainty.</p>
+                    </div>
+
+                    <div class="wish-card">
+                        <span class="wish-emoji">🎨</span>
+                        <p class="wish-text">To be too busy making new memories to ever dwell in what was. A canvas left open.</p>
+                    </div>
+
+                    <div class="wish-card">
+                        <span class="wish-emoji">💜</span>
+                        <p class="wish-text">You. As my everlasting partner in crime. That's why I'm asking you now.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- The Question -->
+            <section class="final-ask" id="question">
+                <div>
+                    <h2>do you want to go on vacation with me?</h2>
+                    <p>2027?</p>
+                    <p style="font-size: 0.95rem; opacity: 0.6; margin-top: 2rem;">look at my camera please</p>
+
+                    <div class="music-player">
+                        <div class="music-label">featuring</div>
+                        <div class="track-name">Starboy</div>
+                        <div class="track-artist">The Weeknd</div>
+                        <div style="margin: 1.5rem 0; border-radius: 8px; overflow: hidden;">
+                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/plnfIj7dkJE?si=kgQ0AVK7sQxwEZVl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="border: none; border-radius: 8px;"></iframe>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 2rem; font-size: 2.5rem; opacity: 0.8;">💜</div>
+                </div>
+            </section>
+
         </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-links">
+            </div>
+            <p>from strangers to something far more intentional</p>
+            <p style="margin-top: 1rem; font-size: 0.85rem;">25.05.2026 → ∞</p>
+        </footer>
     </main>
 
-    <!-- Scripts -->
-    <script src="js/parallax.js" defer></script>
-    <script src="js/utils.js" defer></script>
-    <script src="js/scroll.js" defer></script>
-    <script src="js/main.js" defer></script>
-
-    <!-- Optional: Google Analytics (Add your tracking ID) -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_ID"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'YOUR_ID');
-    </script> -->
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            body.classList.add('dark-mode');
+            themeToggle.textContent = '☀️';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            const theme = body.classList.contains('dark-mode') ? 'dark' : 'light';
+            localStorage.setItem('theme', theme);
+            themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+        });
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.message, .wish-card, .timeline-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Tag filtering (for future interactivity)
+        document.querySelectorAll('.tag').forEach(tag => {
+            tag.addEventListener('click', function() {
+                document.querySelectorAll('.tag').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
