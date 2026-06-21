@@ -1,29 +1,3 @@
-/* ========== UPDATE FÜR SEKTION 1 SCHAUMKRONE ========== */
-
-.water-reflection {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 45%; /* Etwas höher für besseren Sichtbereich */
-    z-index: 2;
-    will-change: transform, opacity;
-    
-    /* Dreifach-Gradient: 
-       1. Eine schmale, weiße Schaumkrone ganz oben (Seafoam)
-       2. Das transluzente Meerblau-Grün darunter
-       3. Sanfter Übergang in den feuchten Sand am Boden */
-    background: 
-        linear-gradient(to bottom, 
-            rgba(244, 249, 244, 0.9) 0%,     /* Knackig weißer Schaumstart */
-            rgba(244, 249, 244, 0.4) 4px,    /* Auslaufender Schaum */
-            rgba(74, 124, 89, 0.3) 15%,      /* Transluzentes Flachwasser */
-            rgba(31, 60, 92, 0.1) 100%       /* Tiefen-Übergang zum Sand */
-        );
-        
-    /* Nutzt die neue Schaum-Animation */
-    animation: waveMotion 7s ease-in-out infinite;
-}
 
 /* ========== UPDATE FÜR DIE KEYFRAMES ========== */
 
