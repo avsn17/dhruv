@@ -1,0 +1,465 @@
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+/* ========== TABLETS (768px and up) ========== */
+@media (max-width: 768px) {
+    :root {
+        --font-size-xl: 32px;
+        --font-size-2xl: 44px;
+        --spacing-lg: 1.5rem;
+    }
+
+    .section {
+        padding: var(--spacing-md);
+    }
+
+    /* Section 1 */
+    .greeting-text {
+        font-size: var(--font-size-xl);
+    }
+
+    .greeting-text .name {
+        font-size: var(--font-size-2xl);
+    }
+
+    .moon {
+        width: 80px;
+        height: 80px;
+        top: 30px;
+        left: 40px;
+    }
+
+    .reeds {
+        width: 250px;
+        height: 300px;
+    }
+
+    /* Section 2 */
+    .quote-container {
+        max-width: 90%;
+    }
+
+    .quote-text {
+        font-size: 18px;
+    }
+
+    /* Section 3 */
+    .box-reveal-text {
+        font-size: 28px;
+    }
+
+    .box-container {
+        width: 200px;
+        height: 160px;
+    }
+
+    .gift-box {
+        width: 160px;
+        height: 120px;
+    }
+
+    .box-ribbon {
+        width: 200px;
+    }
+
+    /* Section 4 */
+    .wish-content {
+        max-width: 90%;
+    }
+
+    .wish-title {
+        font-size: 32px;
+    }
+
+    .wish-item {
+        padding: 1.2rem;
+        font-size: 15px;
+    }
+
+    /* Section 5 */
+    .question-main {
+        font-size: 32px;
+    }
+
+    .question-sub {
+        font-size: 18px;
+    }
+
+    .year {
+        font-size: 56px;
+    }
+}
+
+/* ========== SMALL TABLETS & LANDSCAPE PHONES (600px - 768px) ========== */
+@media (max-width: 600px) {
+    :root {
+        --font-size-xl: 24px;
+        --font-size-2xl: 36px;
+        --spacing-lg: 1rem;
+        --spacing-md: 1rem;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+    .section {
+        padding: var(--spacing-md);
+        min-height: auto;
+        margin-bottom: 100px;
+    }
+
+    /* Section 1 */
+    .moon {
+        width: 60px;
+        height: 60px;
+        top: 20px;
+        left: 30px;
+    }
+
+    .reeds {
+        width: 200px;
+        height: 250px;
+        bottom: 0;
+        right: 0;
+    }
+
+    .greeting-text {
+        font-size: 20px;
+        margin-top: 3rem;
+    }
+
+    .greeting-text .name {
+        font-size: 28px;
+        margin-top: 1rem;
+    }
+
+    /* Section 2 */
+    .quote-text {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .quote-date {
+        font-size: 12px;
+    }
+
+    /* Section 3 */
+    .box-reveal-text {
+        font-size: 20px;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .box-container {
+        width: 150px;
+        height: 120px;
+    }
+
+    .gift-box {
+        width: 120px;
+        height: 90px;
+    }
+
+    .box-ribbon {
+        width: 150px;
+        height: 25px;
+    }
+
+    .ribbon-bow {
+        width: 60px;
+        height: 45px;
+    }
+
+    .bow-loop {
+        width: 20px;
+        height: 25px;
+    }
+
+    .bow-tail {
+        width: 18px;
+        height: 45px;
+    }
+
+    /* Section 4 */
+    .wish-title {
+        font-size: 24px;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .wish-content {
+        max-width: 95%;
+    }
+
+    .wish-item {
+        padding: 1rem;
+        font-size: 14px;
+        margin: 0.8rem 0;
+        border-radius: 8px;
+    }
+
+    .wish-item:hover {
+        transform: translateX(5px);
+    }
+
+    /* Section 5 */
+    .final-question {
+        max-width: 95%;
+    }
+
+    .question-main {
+        font-size: 24px;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .question-sub {
+        font-size: 16px;
+        margin: 1rem 0;
+    }
+
+    .year {
+        font-size: 48px;
+        margin: var(--spacing-lg) 0;
+    }
+
+    /* Scroll Hint */
+    .scroll-hint {
+        font-size: 11px;
+        bottom: 20px;
+    }
+}
+
+/* ========== EXTRA SMALL PHONES (< 480px) ========== */
+@media (max-width: 480px) {
+    :root {
+        --font-size-xl: 20px;
+        --font-size-2xl: 28px;
+        --spacing-lg: 0.8rem;
+        --spacing-md: 0.8rem;
+    }
+
+    body {
+        font-size: 13px;
+    }
+
+    .container {
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .section {
+        min-height: 120vh;
+        padding: 1rem;
+        justify-content: flex-start;
+        padding-top: 2rem;
+    }
+
+    /* Section 1 */
+    .moon {
+        width: 50px;
+        height: 50px;
+        top: 10px;
+        left: 20px;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+
+    .reeds {
+        width: 150px;
+        height: 200px;
+        opacity: 0.5;
+    }
+
+    .greeting-text {
+        font-size: 18px;
+        margin-top: 2rem;
+    }
+
+    .greeting-text .name {
+        font-size: 24px;
+        letter-spacing: 1px;
+    }
+
+    /* Section 2 */
+    .quote-text {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+    }
+
+    /* Section 3 */
+    .box-reveal-text {
+        font-size: 18px;
+        margin-bottom: 1.5rem;
+    }
+
+    .box-container {
+        width: 120px;
+        height: 100px;
+    }
+
+    .gift-box {
+        width: 100px;
+        height: 75px;
+    }
+
+    .box-ribbon {
+        width: 120px;
+        height: 20px;
+    }
+
+    .ribbon-bow {
+        width: 50px;
+        height: 40px;
+    }
+
+    /* Section 4 */
+    .wish-title {
+        font-size: 20px;
+        margin-bottom: 1rem;
+    }
+
+    .wish-item {
+        padding: 0.8rem;
+        font-size: 13px;
+        margin: 0.6rem 0;
+        border-left-width: 2px;
+    }
+
+    /* Section 5 */
+    .question-main {
+        font-size: 20px;
+        margin-bottom: 1rem;
+        line-height: 1.4;
+    }
+
+    .question-sub {
+        font-size: 14px;
+        margin: 0.8rem 0;
+    }
+
+    .year {
+        font-size: 40px;
+        margin: 1.5rem 0;
+    }
+
+    /* Scroll Hint */
+    .scroll-hint {
+        font-size: 10px;
+        bottom: 15px;
+    }
+}
+
+/* ========== ULTRA WIDE SCREENS (1920px+) ========== */
+@media (min-width: 1920px) {
+    :root {
+        --font-size-xl: 56px;
+        --font-size-2xl: 72px;
+    }
+
+    .greeting-text {
+        font-size: var(--font-size-xl);
+    }
+
+    .greeting-text .name {
+        font-size: var(--font-size-2xl);
+    }
+
+    .quote-text {
+        font-size: 32px;
+    }
+
+    .wish-title {
+        font-size: 48px;
+    }
+
+    .question-main {
+        font-size: 56px;
+    }
+
+    .year {
+        font-size: 96px;
+    }
+}
+
+/* ========== LANDSCAPE MODE ADJUSTMENTS ========== */
+@media (max-height: 600px) {
+    .section {
+        min-height: auto;
+        padding: 1rem 0;
+        margin: 2rem 0;
+    }
+
+    .greeting-text .name {
+        margin-top: 0.5rem;
+    }
+
+    .year {
+        margin: 1rem 0;
+    }
+}
+
+/* ========== HIGH DPI SCREENS ========== */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .moon {
+        box-shadow: 0 0 40px rgba(255, 255, 255, 0.4);
+    }
+}
+
+/* ========== TOUCH DEVICES ========== */
+@media (hover: none) and (pointer: coarse) {
+    .wish-item {
+        padding: 1.25rem;
+    }
+
+    .wish-item:active {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateX(5px);
+    }
+
+    /* Remove hover effects on touch */
+    .gift-box:hover {
+        transform: none;
+    }
+}
+
+/* ========== DARK MODE (Optional) ========== */
+@media (prefers-color-scheme: dark) {
+    /* Add dark mode styles if needed */
+}
+
+/* ========== PRINT MEDIA ========== */
+@media print {
+    body {
+        background: white;
+    }
+
+    .section {
+        page-break-after: always;
+        break-inside: avoid;
+    }
+
+    .scroll-hint {
+        display: none;
+    }
+
+    .moon {
+        box-shadow: none;
+    }
+
+    /* Optimize for printing */
+    * {
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+}
+
+/* ========== ACCESSIBILITY: LARGE TEXT MODE ========== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
