@@ -6,7 +6,7 @@ Trying is the outcome of dreams and possibilities. - I hoped for and manifested 
 ## 3. README.md
 
 ```markdown
-# 💜 Avi & Dhruv: A unwaranted story 
+# 💜 Avi & Dhruv: An unwaranted story 
 
 Heartfelt.
 
