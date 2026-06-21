@@ -7,7 +7,7 @@
     <meta name="description" content="A heartfelt website celebrating two people finding...">
     <meta name="keywords" content="birthday, romantic, LDR, mushroom">
     <meta name="author" content="Avi">
-    <meta name="theme-color" content="#">
+    <meta name="theme-color" content="#8B5CF6">
     
     <!-- Open Graph Tags (Socials) -->
     <meta property="og:title" content="Avi & Dhruv: A Story in the making...">
@@ -28,6 +28,45 @@
     <!-- Preload Fonts (if using custom fonts) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+     <style>
+        .music-section {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+ 
+        .music-label {
+            color: #5F7FBA;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+ 
+        audio {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            display: block;
+            border-radius: 5px;
+        }
+ 
+        .music-note {
+            display: inline-block;
+            animation: float 4s ease-in-out infinite;
+            margin: 0 0.5rem;
+        }
+ 
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+    </style>
+</head>
+<body>
 </head>
 <body>
     <!-- Canva Background Container -->
@@ -104,6 +143,20 @@
                 <p class="question-sub">
                     <span>Look at my cam please </span>
                 </p>
+                 <!-- Music Section -->
+                <div class="music-section">
+                    <div class="music-label">
+                        <span class="music-note">✨</span>
+                        <span class="music-note">❣️</span>
+                    </div>
+                    <audio controls>
+                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                    </audio>
+                    <p style="font-size: 0.8rem; color: #ccc; margin-top: 0.8rem;">
+                    </p>
+                </div>
+            </div>
+        </section>
             </div>
         </section>
 
@@ -119,7 +172,7 @@
     <script src="js/scroll.js" defer></script>
     <script src="js/main.js" defer></script>
 
-    <!-- Optional: Google Analytics (Add your tracking ID) -->
+     <!-- Optional: Google Analytics (Add your tracking ID) -->
     <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_ID"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -127,5 +180,6 @@
         gtag('js', new Date());
         gtag('config', 'YOUR_ID');
     </script> -->
+    
 </body>
 </html>
