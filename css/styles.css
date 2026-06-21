@@ -1,400 +1,159 @@
+/* ==========================================
+   DARK ROMANTIC AESTHETIC (CINEMATIC UPGRADE)
+   ========================================== */
+
 :root {
-    /* ========== STRAND & MEER FARBPALETTE ========== */
-    --primary-blue: #4a7c59; /* Sanftes Meerblau-Grün */
-    --deep-ocean: #2b4c6f;    /* Tiefes Ozeanblau */
-    --seafoam-white: #f4f9f4; /* Weißer Wellenschaum */
-    --wet-sand: #d8c3a5;     /* Feuchter Sandstrand */
-    --dry-sand: #eae7dc;     /* Heller, trockener Sand */
-    --accent-coral: #e98074;  /* Koralle / Abendsonne */
-    --white-transparent: rgba(255, 255, 255, 0.15);
-    
-    /* Typography */
-    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    --font-size-base: 16px;
-    --font-size-large: 24px;
-    --font-size-xl: 42px;
-    --font-size-2xl: 56px;
-    --font-weight-normal: 300;
-    --font-weight-medium: 400;
-    --font-weight-bold: 500;
-    
-    /* Spacing */
-    --spacing-xs: 0.5rem;
-    --spacing-sm: 1rem;
-    --spacing-md: 1.5rem;
-    --spacing-lg: 2rem;
-    --spacing-xl: 3rem;
-    
-    /* Transitions */
-    --transition-fast: 0.3s ease;
-    --transition-base: 0.6s ease-out;
-    --transition-slow: 1s ease-out;
+  --bg-dark-obsidian: #05010a;
+  --bg-velvet: #0b0414;
+  --moonlight-main: #f1f5f9;
+  --moonlight-soft: #94a3b8;
+  --glow-purple: #a855f7;
+  --glow-pink: #d946ef;
+  --transition-romantic: all 0.4s ease;
 }
 
-/* ========== RESET & BASE STYLES ========== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
+/* 🌌 BODY */
 body {
-    font-family: var(--font-family);
-    font-size: var(--font-size-base);
-    line-height: 1.6;
-    color: #2b4c6f;
-    overflow-x: hidden;
-    background: linear-gradient(135deg, var(--wet-sand) 0%, var(--dry-sand) 100%);
-    min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-dark-obsidian);
+  color: var(--moonlight-main);
+  font-family: 'Playfair Display', serif;
+  overflow-x: hidden;
+  /* Keep transparent-ish so underlying elements layer beautifully */
+  background-image: 
+    radial-gradient(circle at 50% 20%, rgba(88, 28, 135, 0.15), transparent 60%),
+    radial-gradient(circle at 80% 80%, rgba(217, 70, 239, 0.08), transparent 60%);
+  background-attachment: fixed;
 }
 
-/* ========== TYPOGRAPHY ========== */
+/* 🌑 GLOBAL OVERLAY */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(5, 1, 10, 0.65), rgba(2, 1, 6, 0.9));
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ✨ TYPOGRAPHY */
 h1, h2, h3 {
-    font-weight: var(--font-weight-medium);
-    line-height: 1.2;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  text-shadow:
+    0 0 8px rgba(255, 255, 255, 0.2),
+    0 0 20px rgba(168, 85, 247, 0.5),
+    0 0 40px rgba(168, 85, 247, 0.3);
 }
 
-p {
-    margin: var(--spacing-sm) 0;
+/* 💜 GLOW TEXT & ANIMATION */
+.glow {
+  color: var(--glow-purple);
+  text-shadow:
+    0 0 10px var(--glow-purple),
+    0 0 20px var(--glow-purple),
+    0 0 40px var(--glow-pink);
+  animation: shimmer 3s infinite ease-in-out;
 }
 
-blockquote {
-    font-style: italic;
-    margin: var(--spacing-md) 0;
+/* 🌫 TEXT */
+p, span, li {
+  color: var(--moonlight-soft);
+  line-height: 1.7;
 }
 
-/* ========== CONTAINER LAYOUT ========== */
-.container {
-    width: 100%;
-    height: 100vh;
-    overflow-y: auto;
-    scroll-snap-type: y mandatory;
+/* 🔗 LINKS */
+a {
+  color: var(--glow-purple);
+  text-decoration: none;
+  transition: var(--transition-romantic);
 }
 
-.section {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: var(--spacing-lg);
-    scroll-snap-align: start;
-    position: relative;
-    overflow: hidden; /* Verhindert, dass Wellen-Animationen ausbrechen */
+a:hover {
+  color: var(--glow-pink);
+  text-shadow: 0 0 12px rgba(217, 70, 239, 0.8);
 }
 
-/* ========== NEU: GENERISCHE WELLEN-ANIMATIONEN ========== */
-/* Tipp: Füge dieses HTML-Element in Sektionen ein, die Wellen im Hintergrund haben sollen:
-   <div class="wave-container"><div class="wave wave1"></div><div class="wave wave2"></div><div class="wave wave3"></div></div> */
-.wave-container {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 150px;
-    overflow: hidden;
-    z-index: 1;
-    pointer-events: none;
+/* 🌙 SECTIONS */
+section {
+  min-height: 100vh;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  /* Light glass layer to maintain transparency */
+  background: rgba(10, 5, 20, 0.35);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-top: 1px solid rgba(168, 85, 247, 0.15);
+  border-bottom: 1px solid rgba(168, 85, 247, 0.08);
+  transition: var(--transition-romantic);
 }
 
-.wave {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 200%;
-    height: 100%;
-    background-repeat: repeat-x;
-    background-position: 0 bottom;
-    transform: translate3d(0, 0, 0);
+section:hover {
+  background: rgba(20, 10, 40, 0.45);
 }
 
-/* SVG-Wellenmuster direkt im CSS integriert */
-.wave1 {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,32L120,42.7C240,53,480,75,720,74.7C960,75,1200,53,1320,42.7L1440,32L1440,120L1320,120C1200,120,960,120,720,120C480,120,240,120,120,120L0,120Z' fill='%23f4f9f4' fill-opacity='0.4'%3E%3C/path%3E%3C/svg%3E");
-    animation: wave-move 12s linear infinite;
-    z-index: 4;
-}
-
-.wave2 {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,16L120,21.3C240,27,480,37,720,42.7C960,48,1200,48,1320,48L1440,48L1440,120L1320,120C1200,120,960,120,720,120C480,120,240,120,120,120L0,120Z' fill='%237395ae' fill-opacity='0.3'%3E%3C/path%3E%3C/svg%3E");
-    animation: wave-move-reverse 18s linear infinite;
-    z-index: 3;
-    bottom: 10px;
-}
-
-.wave3 {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,64L120,58.7C240,53,480,43,720,48C960,53,1200,75,1320,85.3L1440,96L1440,120L1320,120C1200,120,960,120,720,120C480,120,240,120,120,120L0,120Z' fill='%232b4c6f' fill-opacity='0.2'%3E%3C/path%3E%3C/svg%3E");
-    animation: wave-move 25s linear infinite;
-    z-index: 2;
-    bottom: 15px;
-}
-
-@keyframes wave-move {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
-
-@keyframes wave-move-reverse {
-    0% { transform: translateX(-50%); }
-    100% { transform: translateX(0); }
-}
-
-/* ========== SECTION 1: SUNSET BEACH ========== */
-.section-1 {
-    background: linear-gradient(180deg, #1f3c5c 0%, #3a6073 25%, #7395ae 50%, var(--accent-coral) 75%, var(--wet-sand) 100%);
-}
-
-.moon {
-    position: absolute;
-    width: 120px;
-    height: 120px;
-    background: rgba(255, 255, 240, 0.9);
-    border-radius: 50%;
-    top: 40px;
-    left: 60px;
-    box-shadow: 0 0 40px rgba(255, 255, 240, 0.5);
-    z-index: 5;
-    animation: moon-glow 4s ease-in-out infinite alternate;
-}
-
-@keyframes moon-glow {
-    0% { box-shadow: 0 0 30px rgba(255, 255, 240, 0.4); }
-    100% { box-shadow: 0 0 50px rgba(255, 255, 240, 0.7); }
-}
-
-.reeds {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 300px;
-    height: 400px;
-    opacity: 0.4;
-    z-index: 3;
-    transform-origin: bottom center;
-    animation: reed-sway 6s ease-in-out infinite alternate;
-}
-
-@keyframes reed-sway {
-    0% { transform: rotate(-2deg); }
-    100% { transform: rotate(4deg); }
-}
-
-.water-reflection {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 40%;
-    background: linear-gradient(to bottom, transparent 0%, rgba(244, 249, 244, 0.2) 50%, rgba(0, 0, 0, 0.05) 100%);
-    z-index: 2;
-    /* Simuliert das rhythmische Einrollen von Gischt */
-    animation: foam-surge 8s ease-in-out infinite alternate;
-}
-
-@keyframes foam-surge {
-    0% { height: 35%; opacity: 0.7; }
-    100% { height: 45%; opacity: 1; }
-}
-
-.greeting-text {
-    text-align: center;
-    color: var(--seafoam-white);
-    font-size: var(--font-size-xl);
-    font-weight: var(--font-weight-normal);
-    font-style: italic;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
-    z-index: 10;
-    position: relative;
-}
-
-.greeting-text .name {
-    display: block;
-    margin-top: var(--spacing-md);
-    font-size: var(--font-size-2xl);
-    font-weight: var(--font-weight-medium);
-    letter-spacing: 2px;
-    color: var(--dry-sand);
-}
-
-/* ========== SECTION 2: QUOTE ========== */
-.section-2 {
-    background: linear-gradient(135deg, #2b4c6f 0%, #1f354d 100%);
-}
-
-.quote-container {
-    max-width: 600px;
-    text-align: center;
-    z-index: 10;
-}
-
-.quote-text {
-    color: var(--dry-sand);
-    font-size: var(--font-size-large);
-    font-style: italic;
-    line-height: 1.8;
-    margin-bottom: var(--spacing-md);
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-}
-
-.quote-date {
-    color: var(--accent-coral);
-    font-size: 14px;
-    letter-spacing: 1px;
-}
-
-/* ========== SECTION 3: BOX REVEAL ========== */
-.section-3 {
-    background: linear-gradient(135deg, #7395ae 0%, #b1c4d0 100%);
-}
-
-.box-reveal-text {
-    color: var(--deep-ocean);
-    font-size: var(--font-size-xl);
-    font-style: italic;
-    margin-bottom: var(--spacing-xl);
-    text-align: center;
-}
-
-.box-reveal-text span {
-    display: block;
-}
-
-.box-container {
-    position: relative;
-    width: 250px;
-    height: 200px;
-    z-index: 10;
-}
-
-.gift-box {
-    width: 200px;
-    height: 150px;
-    background: linear-gradient(135deg, #2b4c6f 0%, #3a6073 100%);
-    border-radius: 4px;
-    position: relative;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-    transition: all var(--transition-fast);
-    /* Leichtes Schaukeln wie Treibholz im Wasser */
-    animation: float-box 4s ease-in-out infinite alternate;
-}
-
-@keyframes float-box {
-    0% { transform: translateY(0) rotate(0deg); }
-    100% { transform: translateY(-8px) rotate(2deg); }
-}
-
-.gift-box:hover {
-    transform: scale(1.05) translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
-    animation-play-state: paused; /* Stoppt das Schaukeln beim Hovern */
-}
-
-.box-ribbon {
-    position: absolute;
-    width: 250px;
-    height: 30px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: linear-gradient(90deg, #e98074 0%, #ff9a8d 50%, #e98074 100%);
-    z-index: 10;
-}
-
-.ribbon-bow {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80px;
-    height: 60px;
-    z-index: 15;
-}
-
-.bow-loop {
-    position: absolute;
-    width: 30px;
-    height: 35px;
-    background: #e87062;
-    border-radius: 50% 0;
-}
-
-.bow-loop.left {
-    left: 10px;
-    transform: rotate(-25deg);
-}
-
-.bow-loop.right {
-    right: 10px;
-    transform: rotate(25deg);
-}
-
-.bow-tail {
-    position: absolute;
-    width: 25px;
-    height: 60px;
-    background: #e98074;
-}
-
-.bow-tail.left {
-    left: 5px;
-    top: 40px;
-    transform: rotate(-15deg);
-}
-
-.bow-tail.right {
-    right: 5px;
-    top: 40px;
-    transform: rotate(15deg);
-}
-
-/* ========== SECTION 4: WISHES ========== */
-.section-4 {
-    background: linear-gradient(135deg, #4a7c59 0%, #689f7a 100%);
-}
-
-.wish-content {
-    max-width: 600px;
-    width: 100%;
-    z-index: 10;
-}
-
-.wish-title {
-    color: var(--seafoam-white);
-    font-size: var(--font-size-xl);
-    font-style: italic;
-    text-align: center;
-    margin-bottom: var(--spacing-xl);
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-}
-
+/* 🌸 WISH ITEMS */
 .wish-item {
-    background: var(--white-transparent);
-    backdrop-filter: blur(10px);
-    padding: var(--spacing-md);
-    margin: var(--spacing-md) 0;
-    border-radius: 10px;
-    color: var(--seafoam-white);
-    font-size: 16px;
-    line-height: 1.6;
-    border-left: 3px solid var(--dry-sand);
-    transition: all var(--transition-fast);
-    cursor: pointer;
+  margin: 14px 0;
+  font-size: 1.1rem;
+  position: relative;
+  transition: var(--transition-romantic);
+}
+
+.wish-item::before {
+  content: "✦ ";
+  color: var(--glow-purple);
+  margin-right: 10px;
+  text-shadow: 0 0 10px var(--glow-purple);
 }
 
 .wish-item:hover {
-    background: rgba(255, 255, 255, 0.25);
-    transform: translateX(10px);
+  transform: translateX(5px);
+  color: #ffffff;
 }
 
-.wish-emoji {
-    margin-right: var(--spacing-xs);
-    display: inline-block;
+/* 💫 FLOATING ANIMATION */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
 }
 
+.name {
+  animation: float 5s ease-in-out infinite;
+  font-size: 3.5rem;
+  color: var(--glow-purple);
+  text-shadow: 0 0 20px var(--glow-purple);
+}
+
+/* ✨ SHIMMER EFFECT */
+@keyframes shimmer {
+  0% { opacity: 0.7; }
+  50% { opacity: 1; }
+  100% { opacity: 0.7; }
+}
+
+/* 🌙 SCROLL HINT */
+.scroll-hint {
+  position: fixed;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+  color: var(--moonlight-soft);
+  opacity: 0.6;
+  font-size: 0.9rem;
+  pointer-events: none;
+}
+
+/* 📱 MOBILE REFS */
+@media(max-width: 768px) {
+  .name {
+    font-size: 2.4rem;
+  }
+}
