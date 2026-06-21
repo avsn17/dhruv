@@ -1,14 +1,3 @@
-{
-  "buildCommand": "echo 'Build complete'",
-  "outputDirectory": ".",
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ]
-}
-
 
 {
   "builds": [
@@ -16,16 +5,7 @@
       "src": "index.html",
       "use": "@vercel/static"
     },
-    {
-      "src": "admin.html",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/admin",
-      "dest": "/admin.html"
-    },
+    
     {
       "src": "/(.*)",
       "dest": "/index.html"
