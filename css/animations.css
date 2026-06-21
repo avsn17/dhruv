@@ -1,5 +1,33 @@
+/* ========== ANIMATIONS OPTIMIZATION ========== */
 
-/* ========== UPDATE FÜR DIE KEYFRAMES ========== */
+.water-reflection {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 45%; /* Etwas höher für besseren Sichtbereich */
+    z-index: 2;
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    
+    /* Dreifach-Gradient: 
+       1. Eine schmale, weiße Schaumkrone ganz oben (Seafoam)
+       2. Das transluzente Meerblau-Grün darunter
+       3. Sanfter Übergang in den feuchten Sand am Boden */
+    background: 
+        linear-gradient(to bottom, 
+            rgba(244, 249, 244, 0.9) 0%,     /* Knackig weißer Schaumstart */
+            rgba(244, 249, 244, 0.4) 4px,    /* Auslaufender Schaum */
+            rgba(74, 124, 89, 0.3) 15%,      /* Transluzentes Flachwasser */
+            rgba(31, 60, 92, 0.1) 100%       /* Tiefen-Übergang zum Sand */
+        );
+        
+    /* Nutzt die neue Schaum-Animation */
+    animation: waveMotion 7s ease-in-out infinite;
+}
+
+/* ========== OPTIMIZED KEYFRAMES ========== */
 
 @keyframes waveMotion {
     0%, 100% {
@@ -23,5 +51,12 @@
         /* Welle zieht sich langsam wieder zurück */
         transform: translateY(5px) scaleY(0.98);
         opacity: 0.5;
+    }
+}
+
+/* ========== REDUCED MOTION SUPPORT ========== */
+@media (prefers-reduced-motion: reduce) {
+    .water-reflection {
+        animation: none;
     }
 }
