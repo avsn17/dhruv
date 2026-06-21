@@ -1,159 +1,245 @@
-/* ==========================================
-   DARK ROMANTIC AESTHETIC (CINEMATIC UPGRADE)
-   ========================================== */
+/* ==========================================================
+   DARK ROMANTIC AESTHETIC — PREMIUM CINEMATIC UPGRADE (v3)
+   ========================================================== */
 
 :root {
-  --bg-dark-obsidian: #05010a;
-  --bg-velvet: #0b0414;
-  --moonlight-main: #f1f5f9;
-  --moonlight-soft: #94a3b8;
-  --glow-purple: #a855f7;
-  --glow-pink: #d946ef;
-  --transition-romantic: all 0.4s ease;
+  /* Dark Gothic/Romantic Ambiance */
+  --bg-abyss: #040108;
+  --bg-velvet-glass: rgba(13, 6, 24, 0.45);
+  
+  /* Luminous Ethereal Accents */
+  --moonlight-pure: #f8fafc;
+  --moonlight-haze: #cbd5e1;
+  --moonlight-dust: #94a3b8;
+  --glow-amethyst: #a855f7;
+  --glow-orchid: #e879f9;
+  
+  /* Motion & Atmosphere */
+  --romantic-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: all 0.6s var(--romantic-ease);
 }
 
-/* 🌌 BODY */
+/* 🌌 STRUCTURAL BASE & BACKGROUND MIST */
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--bg-dark-obsidian);
-  color: var(--moonlight-main);
-  font-family: 'Playfair Display', serif;
+  background-color: var(--bg-abyss);
+  color: var(--moonlight-haze);
+  font-family: 'Playfair Display', 'Georgia', serif;
   overflow-x: hidden;
-  /* Keep transparent-ish so underlying elements layer beautifully */
   background-image: 
-    radial-gradient(circle at 50% 20%, rgba(88, 28, 135, 0.15), transparent 60%),
-    radial-gradient(circle at 80% 80%, rgba(217, 70, 239, 0.08), transparent 60%);
+    radial-gradient(circle at 50% 25%, rgba(168, 85, 247, 0.12) 0%, transparent 55%),
+    radial-gradient(circle at 80% 75%, rgba(232, 121, 249, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 10% 80%, rgba(147, 51, 234, 0.08) 0%, transparent 45%);
   background-attachment: fixed;
 }
 
-/* 🌑 GLOBAL OVERLAY */
-.overlay {
+/* Global Subtle Overlay for Depths */
+main[role="main"]::before {
+  content: "";
   position: fixed;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(5, 1, 10, 0.65), rgba(2, 1, 6, 0.9));
+  background: linear-gradient(to bottom, rgba(4, 1, 8, 0.3), rgba(11, 4, 18, 0.7));
   z-index: -1;
   pointer-events: none;
 }
 
-/* ✨ TYPOGRAPHY */
-h1, h2, h3 {
+/* ✨ TYPOGRAPHY & CINEMATIC HEADLINES */
+h1, h2, h3, .name {
+  font-family: 'Cinzel', 'Playfair Display', serif;
   font-weight: 400;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   color: #ffffff;
-  text-shadow:
-    0 0 8px rgba(255, 255, 255, 0.2),
-    0 0 20px rgba(168, 85, 247, 0.5),
-    0 0 40px rgba(168, 85, 247, 0.3);
+  text-shadow: 
+    0 0 10px rgba(255, 255, 255, 0.15),
+    0 0 20px rgba(168, 85, 247, 0.4),
+    0 0 45px rgba(232, 121, 249, 0.2);
 }
 
-/* 💜 GLOW TEXT & ANIMATION */
-.glow {
-  color: var(--glow-purple);
-  text-shadow:
-    0 0 10px var(--glow-purple),
-    0 0 20px var(--glow-purple),
-    0 0 40px var(--glow-pink);
-  animation: shimmer 3s infinite ease-in-out;
+h1 {
+  font-size: 2.5rem;
+  line-height: 1.4;
 }
 
-/* 🌫 TEXT */
-p, span, li {
-  color: var(--moonlight-soft);
-  line-height: 1.7;
+h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
 }
 
-/* 🔗 LINKS */
-a {
-  color: var(--glow-purple);
-  text-decoration: none;
-  transition: var(--transition-romantic);
+h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 25%;
+  width: 50%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--glow-orchid), transparent);
 }
 
-a:hover {
-  color: var(--glow-pink);
-  text-shadow: 0 0 12px rgba(217, 70, 239, 0.8);
+/* 💜 THE NAME DHRUV & HIGHLIGHTED SPANS */
+span, div > span {
+  color: #ffffff;
+  font-weight: 600;
+  text-shadow: 0 0 15px rgba(168, 85, 247, 0.6);
 }
 
-/* 🌙 SECTIONS */
+/* Top Intro Header styling */
+div:has(> span) {
+  animation: ethereal-float 6s ease-in-out infinite;
+}
+
+div > span {
+  font-size: 3.5rem;
+  letter-spacing: 0.05em;
+  background: linear-gradient(to right, #ffffff, var(--glow-orchid));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 🔗 THE CANVA BIRTHDAY LINK BLOCK */
+p > a[href*="canva.com"] {
+  display: inline-block;
+  padding: 12px 28px;
+  background: rgba(168, 85, 247, 0.08);
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  border-radius: 50px;
+  color: var(--moonlight-pure);
+  letter-spacing: 0.05em;
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.1);
+  transition: var(--transition-slow);
+  backdrop-filter: blur(4px);
+}
+
+p > a[href*="canva.com"]:hover {
+  background: rgba(232, 121, 249, 0.15);
+  border-color: rgba(232, 121, 249, 0.6);
+  box-shadow: 0 0 25px rgba(232, 121, 249, 0.4);
+  transform: translateY(-2px);
+}
+
+/* 🌙 HIGHLY REFINED SECTIONS */
 section {
   min-height: 100vh;
-  padding: 60px 20px;
+  padding: 80px 24px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   box-sizing: border-box;
-  /* Light glass layer to maintain transparency */
-  background: rgba(10, 5, 20, 0.35);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  border-top: 1px solid rgba(168, 85, 247, 0.15);
-  border-bottom: 1px solid rgba(168, 85, 247, 0.08);
-  transition: var(--transition-romantic);
+  background: var(--bg-velvet-glass);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(168, 85, 247, 0.12);
+  border-bottom: 1px solid rgba(168, 85, 247, 0.05);
+  transition: var(--transition-slow);
 }
 
 section:hover {
-  background: rgba(20, 10, 40, 0.45);
+  background: rgba(18, 8, 36, 0.55);
+  border-top-color: rgba(232, 121, 249, 0.25);
 }
 
-/* 🌸 WISH ITEMS */
-.wish-item {
-  margin: 14px 0;
-  font-size: 1.1rem;
+/* 🕯️ QUOTE BLOCK (THE PATIENCE SECTION) */
+blockquote {
+  font-style: italic;
+  font-size: 1.4rem;
+  line-height: 1.8;
+  max-width: 650px;
+  margin: 0 auto 1.5rem auto;
+  color: var(--moonlight-pure);
   position: relative;
-  transition: var(--transition-romantic);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
-.wish-item::before {
-  content: "✦ ";
-  color: var(--glow-purple);
-  margin-right: 10px;
-  text-shadow: 0 0 10px var(--glow-purple);
+blockquote::before, blockquote::after {
+  color: var(--glow-orchid);
+  font-size: 2.5rem;
+  position: absolute;
+  opacity: 0.4;
+}
+blockquote::before { content: "“"; left: -30px; top: -10px; }
+blockquote::after { content: "”"; right: -30px; bottom: -30px; }
+
+blockquote + p {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--glow-orchid);
+  opacity: 0.8;
 }
 
-.wish-item:hover {
-  transform: translateX(5px);
+/* 🌸 THE WISH CARDS (ARTICLES) */
+article {
+  background: rgba(6, 2, 12, 0.5);
+  border: 1px solid rgba(168, 85, 247, 0.15);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin: 20px auto;
+  max-width: 550px;
+  text-align: left;
+  line-height: 1.6;
+  font-size: 1.05rem;
+  color: var(--moonlight-haze);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: var(--transition-slow);
+}
+
+article:hover {
+  transform: translateX(6px) scale(1.01);
+  background: rgba(14, 5, 28, 0.6);
+  border-color: rgba(232, 121, 249, 0.4);
+  box-shadow: 0 6px 25px rgba(168, 85, 247, 0.15);
   color: #ffffff;
 }
 
-/* 💫 FLOATING ANIMATION */
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-12px); }
-  100% { transform: translateY(0px); }
+/* Sparkle icon optimization inside wishes */
+article > span {
+  color: var(--glow-orchid) !important;
+  display: inline-block;
+  margin-right: 8px;
+  text-shadow: 0 0 8px var(--glow-orchid);
+  animation: soft-pulse 2s infinite ease-in-out;
 }
 
-.name {
-  animation: float 5s ease-in-out infinite;
-  font-size: 3.5rem;
-  color: var(--glow-purple);
-  text-shadow: 0 0 20px var(--glow-purple);
+/* 🎁 GIFT REVEAL WRAPPER SECURITY */
+section[aria-label="Gift box reveal"] > div {
+  transition: var(--transition-slow);
 }
 
-/* ✨ SHIMMER EFFECT */
-@keyframes shimmer {
-  0% { opacity: 0.7; }
-  50% { opacity: 1; }
-  100% { opacity: 0.7; }
+/* 💫 ATMOSPHERIC CINEMATIC ANIMATIONS */
+@keyframes ethereal-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
 }
 
-/* 🌙 SCROLL HINT */
-.scroll-hint {
+@keyframes soft-pulse {
+  0%, 100% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
+/* 🌙 SCROLL INDICATOR */
+div[aria-label*="Scroll"] {
   position: fixed;
-  bottom: 15px;
-  width: 100%;
-  text-align: center;
-  color: var(--moonlight-soft);
-  opacity: 0.6;
-  font-size: 0.9rem;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--moonlight-dust);
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.5;
   pointer-events: none;
+  animation: ethereal-float 2.5s infinite ease-in-out;
 }
 
-/* 📱 MOBILE REFS */
-@media(max-width: 768px) {
-  .name {
-    font-size: 2.4rem;
-  }
+/* 📱 MOBILE RESPONSIVENESS FINESSE */
+@media (max-width: 768px) {
+  div > span { font-size: 2.6rem; }
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.5rem; }
+  blockquote { font-size: 1.15rem; max-width: 90%; }
+  article { max-width: 100%; margin: 15px 0; }
 }
