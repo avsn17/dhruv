@@ -30,10 +30,6 @@ body {
   color: var(--moonlight-main);
   font-family: 'Playfair Display', serif;
   overflow-x: hidden;
-  /* Keep transparent-ish so underlying elements layer beautifully */
-  background-image: 
-    radial-gradient(circle at 50% 20%, rgba(88, 28, 135, 0.15), transparent 60%),
-    radial-gradient(circle at 80% 80%, rgba(217, 70, 239, 0.08), transparent 60%);
   background-attachment: fixed;
   will-change: background;
   -webkit-font-smoothing: antialiased;
