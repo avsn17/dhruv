@@ -27,6 +27,170 @@
     animation: waveMotion 7s ease-in-out infinite;
 }
 
+/* ========== PARALLAX EFFECT ========== */
+
+.canva-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+    will-change: transform;
+}
+
+.canva-background iframe {
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+    display: block;
+}
+
+/* ========== SECTION ENTRANCE ANIMATIONS ========== */
+
+section {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+section:nth-of-type(1) {
+    animation-delay: 0.2s;
+}
+
+section:nth-of-type(2) {
+    animation-delay: 0.4s;
+}
+
+section:nth-of-type(3) {
+    animation-delay: 0.6s;
+}
+
+section:nth-of-type(4) {
+    animation-delay: 0.8s;
+}
+
+/* Fade In Up Animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scroll-triggered animations */
+.section.in-view {
+    animation: fadeInUp 0.8s ease-out forwards !important;
+}
+
+/* Individual section animations */
+.section-1 {
+    animation: slideInCenter 1s ease-out forwards;
+}
+
+.section-2 {
+    animation: slideInLeft 1s ease-out forwards 0.2s;
+}
+
+.section-4 {
+    animation: slideInRight 1s ease-out forwards 0.2s;
+}
+
+.section-5 {
+    animation: scaleUpFade 1s ease-out forwards 0.3s;
+}
+
+@keyframes slideInCenter {
+    0% {
+        opacity: 0;
+        transform: translateY(60px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-60px) translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(60px) translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) translateY(0);
+    }
+}
+
+@keyframes scaleUpFade {
+    0% {
+        opacity: 0;
+        transform: scale(0.85) translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* ========== ELEMENT-LEVEL ANIMATIONS ========== */
+
+.greeting-text {
+    animation: fadeInUp 1s ease-out 0.4s forwards;
+    opacity: 0;
+}
+
+.name {
+    animation: float 5s ease-in-out infinite, fadeInUp 1s ease-out 0.6s forwards !important;
+    opacity: 0;
+}
+
+.quote-container {
+    animation: fadeInUp 0.8s ease-out 0.3s forwards;
+    opacity: 0;
+}
+
+.wish-content {
+    animation: fadeInUp 0.8s ease-out 0.3s forwards;
+    opacity: 0;
+}
+
+.wish-item {
+    animation: slideInLeft 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.wish-item:nth-child(1) { animation-delay: 0.5s; }
+.wish-item:nth-child(2) { animation-delay: 0.65s; }
+.wish-item:nth-child(3) { animation-delay: 0.8s; }
+.wish-item:nth-child(4) { animation-delay: 0.95s; }
+.wish-item:nth-child(5) { animation-delay: 1.1s; }
+
+.final-question {
+    animation: scaleUpFade 1s ease-out 0.4s forwards;
+    opacity: 0;
+}
+
+.question-main {
+    animation: fadeInUp 0.8s ease-out 0.6s forwards;
+    opacity: 0;
+}
+
 /* ========== OPTIMIZED KEYFRAMES ========== */
 
 @keyframes waveMotion {
@@ -58,5 +222,18 @@
 @media (prefers-reduced-motion: reduce) {
     .water-reflection {
         animation: none;
+    }
+
+    section,
+    .greeting-text,
+    .name,
+    .quote-container,
+    .wish-content,
+    .wish-item,
+    .final-question,
+    .question-main {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
     }
 }
