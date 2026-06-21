@@ -243,3 +243,25 @@ div[aria-label*="Scroll"] {
   blockquote { font-size: 1.15rem; max-width: 90%; }
   article { max-width: 100%; margin: 15px 0; }
 }
+
+/* 🌌 BACKGROUND STARS EFFECT */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: 
+    radial-gradient(1px 1px at 10% 20%, #fff 100%, transparent),
+    radial-gradient(1px 1px at 40% 70%, rgba(232, 121, 249, 0.8) 100%, transparent),
+    radial-gradient(2px 2px at 70% 30%, rgba(168, 85, 247, 0.9) 100%, transparent),
+    radial-gradient(1px 1px at 90% 80%, #fff 60%, transparent);
+  background-size: 250px 250px;
+  opacity: 0.25;
+  z-index: -1;
+  animation: cosmic-twinkle 8s infinite alternate ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes cosmic-twinkle {
+  0% { opacity: 0.15; transform: scale(0.98); }
+  100% { opacity: 0.35; transform: scale(1.02); }
+}
