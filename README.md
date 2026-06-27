@@ -7,6 +7,8 @@ A heartfelt web project dedicated to the realization of shared dreams and meanin
 [![Vercel](https://img.shields.io/badge/Hosted%20on-Vercel-black?style=flat-square&logo=vercel)](https://dhruv-smoky.vercel.app)
 [![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](LICENSE)
 
+<img width="306" height="297" alt="Bildschirmfoto 2026-06-27 um 07 18 42" src="https://github.com/user-attachments/assets/7b7dce0d-efa0-4b58-a646-6dd24d1b5e78" />
+
 ---
 
 ## ✨ About
